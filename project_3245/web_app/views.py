@@ -6,10 +6,10 @@ def index_function(request):
 
 def about_function(request):
 
-    char = "This is About page where you landed"
-    # char2
-
-    return HttpResponse(char)
+   return render(request, 'index.html')
 
 def community_function (request):
    return render (request, 'community.html')
+
+def latest_project (request):
+   return render (request, 'latest_project.html')

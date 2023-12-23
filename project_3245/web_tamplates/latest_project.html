@@ -274,8 +274,28 @@
                 <div class="card-body">
                     <h4 class="card-title">"Project title"</h4>
                     <br>
-                    <p class="card-text">n order to provide the best possible experience to old and buggy browsers, Bootstrap uses CSS browser hacks in several places to target special CSS to certain browser versions in order to work around bugs in the browsers themselves. These hacks understandably cause CSS validators to complain that they are invalid. In a couple places, we also use bleeding-edge CSS features that aren’t yet fully standardized, but these are used purely for progressive enhancement.</p>
-                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                    <p class="card-text">an order to provide the best possible experience to old and buggy browsers, Bootstrap uses CSS browser hacks in several places to target special CSS to certain browser versions in order to work around bugs in the browsers themselves.</p>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling" style="background-image: linear-gradient(to right, #093028 0%, #237A57  51%, #093028  100%)">Read Article</button>
+
+<div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Offcanvas with body scrolling</h5>
+    <button type="button" class="btn-close"  data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <p>Try scrolling the rest of the page to see this option in action.</p>
+  </div>
+</div>
+<br><br>
+                    {% comment %} Project completion {% endcomment %}
+                    <div class="progress" role="progressbar" aria-label="Warning example" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                      <div class="progress-bar bg-warning" style="width: 75%"></div>
+                    </div>
+<br>
+                    <div class="d-grid gap-2 col-6 mx-auto">
+                      <button class="btn btn-primary" type="button" title="Download" style="background-image: linear-gradient(to right, #136a8a 0%, #267871  51%, #136a8a  100%)"><img width="25" height="25" src="https://img.icons8.com/material-two-tone/25/download--v1.png" alt="download--v1"/></button>
+                      
+                    </div>
                 </div>
             </div>
         </div>

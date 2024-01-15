@@ -13,3 +13,6 @@ def community_function (request):
 
 def latest_project (request):
    return render (request, 'latest_project.html')
+
+def signup (request):
+   return render (request, 'signup.html')

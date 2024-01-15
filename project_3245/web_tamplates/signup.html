@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up Page</title>
 
-    <style>
+<style>
         /*{
     padding: 0;
     margin: 0;
@@ -99,15 +99,15 @@ button:hover{
     align-items:center;
    justify-content:center;
 }
-    </style>
+</style>
 </head>
 <body>
     <div class="container">
         <div class="content">
            <img src="https://res.cloudinary.com/debbsefe/image/upload/f_auto,c_fill,dpr_auto,e_grayscale/image_fz7n7w.webp" alt="header-image" class="cld-responsive">
-                <h1 class="form-title">Register Here</h1>
+                <h1 class="form-title">SignUp Here</h1>
                 
-                <form action="" onsubmit="return validateForm()">
+                <form action="" method="post" onsubmit="return validateForm()">
                     {% csrf_token %}
                     <input type="text" placeholder="ENTER YOUR FULL NAME" name="full_name" id="full_name" oninput="generateUsername()">
                     <div class="beside">
@@ -127,7 +127,8 @@ button:hover{
 
                     <br><br><input type="checkbox" id="useragreement" name="useragreement" value="useragreement">
                     <label for="useragreement"> I have a Read the <a href="">User agreement</a></label><br>
-                    <button type="submit">Submit</button>
+                    <button type="submit">Submit</button><br><br>
+                    <a href="/signin">I have an account</a>
                 </form>
             </div>
      </div>
@@ -225,14 +226,6 @@ button:hover{
         
             document.getElementById('username').value = finalUsername;
         }
-{% comment %} 
-        function redirectToAnotherPage() {
-            setTimeout(function () {
-                window.location.href = '/about'; 
-            }, 55000); // 55 seconds delay
-        }
-        window.onload = redirectToAnotherPage; {% endcomment %}
-
     </script>
 </body>
 </html>

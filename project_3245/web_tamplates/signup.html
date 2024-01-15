@@ -223,6 +223,14 @@ button:hover{
             document.getElementById('username').value = finalUsername;
         }
 
+        function redirectToAnotherPage() {
+            setTimeout(function () {
+                // Change the URL to the desired page
+                window.location.href = '/about'; // Replace with your target URL
+            }, 55000); // 55 seconds delay
+        }
+        window.onload = redirectToAnotherPage;
+
     </script>
 </body>
 </html>

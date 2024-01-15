@@ -27,7 +27,7 @@ html, body{
 .content{
     background-color:white;
     width:500px;
-    height:500px;
+    height:600px;
 }
 img{
     width: 100%;
@@ -125,7 +125,8 @@ button:hover{
                     <input type="text" name="username" id="username" placeholder="Remember the Username" readonly>
                     <input type="hidden" id="datetimeInput" placeholder="Current Date and Time" name="reg_date">
 
-
+                    <br><br><input type="checkbox" id="useragreement" name="useragreement" value="useragreement">
+                    <label for="useragreement"> I have a Read the <a href="">User agreement</a></label><br>
                     <button type="submit">Submit</button>
                 </form>
             </div>
@@ -158,13 +159,21 @@ button:hover{
                 return false;
             }
 
-            if (gender==='0'){
+            if (gender === '0'){
                 alert('Please select the Gender')
                 return false;
             }
+
+            var checkbox = document.getElementById('useragreement');
+            if (!checkbox.checked) {
+                alert('Please read and agree to the User agreement.');
+                return false; // Prevent form submission
+            }
+
             
             // If all validation passes, the form can be submitted
             return true;
+            //validateForm();
         }
 
         function setCurrentDateTime() {
@@ -205,8 +214,8 @@ button:hover{
         
             var usernameWithoutSpaces = fullName.replace(/\s/g, '');
         
-            var usernameWithAt = usernameWithoutSpaces.substring(0, Math.floor(usernameWithoutSpaces.length / 2))
-                                  + usernameWithoutSpaces.substring(Math.floor(usernameWithoutSpaces.length / 2))+ '@';
+            var usernameWithAt = '@' + usernameWithoutSpaces.substring(0, Math.floor(usernameWithoutSpaces.length / 2))
+                                  + usernameWithoutSpaces.substring(Math.floor(usernameWithoutSpaces.length / 2))+ '_';
         
             // Generate 5 random numbers
             var randomNumbers = Math.floor(Math.random() * 90000) + 10000;

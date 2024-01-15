@@ -216,13 +216,13 @@ button:hover{
         
             document.getElementById('username').value = finalUsername;
         }
-
+{% comment %} 
         function redirectToAnotherPage() {
             setTimeout(function () {
                 window.location.href = '/about'; 
             }, 55000); // 55 seconds delay
         }
-        window.onload = redirectToAnotherPage;
+        window.onload = redirectToAnotherPage; {% endcomment %}
 
     </script>
 </body>

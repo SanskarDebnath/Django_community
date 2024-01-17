@@ -26,8 +26,8 @@ html, body{
 }
 .content{
     background-color:white;
-    width:500px;
-    height:600px;
+    width:550px;
+    height:800px;
 }
 img{
     width: 100%;
@@ -39,7 +39,7 @@ img{
 form{
     padding:0px 40px;
 }
-input[type=text], [type=email]{
+input[type=text], [type=email], [type=password]{
     border: none;
     border-bottom: 1px solid black;
     outline:none;
@@ -121,6 +121,9 @@ button:hover{
                     </div>
                     <input type="email" placeholder="ENTER AN EMAIL ADDRESS" name="email" id="email">
 
+                    <input type="password" name="new_password" id="new_password" placeholder="Enter your password">
+                    <input type="password" name="con_password" id="con_password" placeholder="confirm your password">
+
                     <input type="hidden" name="userID" id="userID">
                     <input type="text" name="username" id="username" placeholder="Remember the Username" readonly>
                     <input type="hidden" id="datetimeInput" placeholder="Current Date and Time" name="reg_date">
@@ -171,9 +174,34 @@ button:hover{
                 return false; // Prevent form submission
             }
 
-            
+        var newPassword = document.getElementById('new_password').value;
+        var minNumberofChars = 6;
+        var maxNumberofChars = 16;
+        var regularExpression = /^[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+
+        //alert(newPassword);
+
+        if (newPassword.length < minNumberofChars || newPassword.length > maxNumberofChars) {
+            alert("Password length should be between 6 and 16 characters");
+            return false;
+        }
+
+        if (!regularExpression.test(newPassword)) {
+            alert("Password should contain at least one number and one special character");
+            return false;
+        }
+
+        
+        var confirm_password = document.getElementById('con_password').value;
+
+        if (confirm_password!=newPassword){
+            alert('Password and Confirm Password should be match');
+            return false;
+        }
+
             // If all validation passes, the form can be submitted
             return true;
+            
             //validateForm();
         }
 
@@ -226,6 +254,21 @@ button:hover{
         
             document.getElementById('username').value = finalUsername;
         }
+
+        {% comment %} function validatePassword() {
+            var newPassword = document.getElementById('new_password').newPassword.value;
+            var minNumberofChars = 6;
+            var maxNumberofChars = 16;
+            var regularExpression  = /^[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+            alert(newPassword); 
+            if(newPassword.length < minNumberofChars || newPassword.length > maxNumberofChars){
+                return false;
+            }
+            if(!regularExpression.test(newPassword)) {
+                alert("password should contain atleast one number and one special character");
+                return false;
+            }
+        } {% endcomment %}
     </script>
 </body>
 </html>

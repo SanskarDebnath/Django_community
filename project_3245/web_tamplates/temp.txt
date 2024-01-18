@@ -1,0 +1,16 @@
+full_name (50)
+
+phn (10)
+
+gender (1)
+
+email (50)
+
+new_password (200)
+
+userId (40)
+
+username(40)
+
+reg_date (40)
+

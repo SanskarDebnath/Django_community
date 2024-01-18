@@ -9,5 +9,6 @@ urlpatterns = [
     path ('community',views.community_function, name='Community Page'),
     path ('latest_project', views.latest_project, name='latest projects'),
     path ('signup', views.signup_view, name='signup'),
-    path ('signin', views.signin, name = 'signin')
+    path ('signin', views.signin, name = 'signin'),
+    path ('dashboard', views.dashboard, name = 'dashboard')
 ]

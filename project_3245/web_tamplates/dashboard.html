@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <style>
+        .circular_image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            background-color: white;
+            display:inline-block;
+            vertical-align:middle;
+          }
+          .circular_image img{
+            width:180%;
+          }
+
+        body {
+            font-family: 'Proxima Nova';
+        }
+    
+          .custom-card {
+            background-color: #000;
+            color: #fff;
+            max-width: 800px; 
+            margin: auto; 
+            margin-top: 50px;
+            font-weight: bold;
+        }
+        .custom-card .card-header {
+          display: flex;
+          background-color : #fff;
+          color : #000;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0.35rem 1.25rem;
+          border-bottom: 10px solid #B200ED;
+          font-weight : bold;
+      }
+      .custom-card #user {
+          margin-bottom: 0; /* Remove default margin for h6 */
+      }
+    
+      .custom-card .avatar {
+          width: 40px; /* Adjust the width as needed */
+          height: 40px; /* Adjust the height as needed */
+          object-fit: cover; /* Ensure the image covers the entire container */
+          border-radius: 50%; /* Create a circular avatar */
+      }
+      
+      
+
+    </style>
+    
+</head>
+  <body>
+    
+    <nav class="navbar bg-body-tertiary fixed-top">
+        <div class="container-fluid">
+         
+            <div class="circular_image">
+                <img src="/static/images/sanskardebnath.jpg"/>
+              </div>
+              
+              <button type="button" class="btn btn-primary position-relative">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAABaElEQVR4nO2UW0sCQRiG/Rv1T7sIComILsToZGWeyySTzDTLhU3bPOxhXNHdzdmLLiWoXxC8MQtLxW626t7pBy/DzMe8z8w3wxcILGK+Q9b1ZaKbCWJQkRimNL2oyHwk7XXJAanLPY4YJvzSo9StOSDBSOozW+GhzGiuGCaYD/NzQHhJfd86zSKUzqOpDqYCtHo6ds4K2Dw5B9cmHw4I0c03SRsiUbzH2n4S5UZ7IkBVELF+kMTxZRnSYAjm5wqxN1SEjrUhWrgDA48tj06RKtWsg902Wt+5/yBMTVVDOHMFVsK63HMFPJE+tmM5hFJ5PKva77wXiP2IF1Ueq3txayQ/cgVOsNbZLdhtHIfwCrHFtQk2jjLYzV5D6PZxmLtBMJLGQ0v+u5STQpg6/RfLfCUctUY2H/sZpoHY4sWutx83C4R4lRtEMejIT4hi0JETotOSvxCz6N6FDRr3owsrBo25duFFzFd8AX2yKubKEJXCAAAAAElFTkSuQmCC">
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                  0+
+                  <span class="visually-hidden">unread messages</span>
+                </span>
+              </button>
+          
+              <button type="button" class="btn btn-primary position-relative">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEBklEQVR4nM2V7U9TVxjA+R82v+zlbzHZpHT07WLvbXtLu9JKtiBTUddSKKClEJABG4jLxLFNqDAZxkiMcZMtc2LiFCZDpAjO3hpsK22hpdBWSfssz6G9baUV5Mt2kpOTe87znN99Xk9Bwf9h7BWzbwvEtF4kYwfkKv1dmtVzjLp8QrK/dKhQwpTh+a4vF8iU74sptV0gZuJaQ0Xk9NffJoZHRuHqtTEYGByBUx09oDVUxoskioSU1gwKhSXvvRFgn4RhhRLFy2qLLTbr+Aei0Y2cMxBYhfHbd+G4+USimGI3BGJGuSNAMcVaUGHst1tZF66txWBlZQ0CgTBZ8Rv3w+EYuJ56YPjSKIhK1HFRCVu/rQUImJp28JeHQhFYXPTB9MwCfHn6HFRbbNDZfRam/p4j+3iOQM7lBvwxBOW1CGMglKpeZFqw5AvCE6cbph/Mg0r7CRhrrdB/YQSMNVag2QPw19QcOff5QsQ6J7cIF0dGoZhSbXwgYt7N4SaV3Vxni6UAfv8quQBnZ9dZMNc3ZbnPXGeD1vYeXgbl3R4fAR0zNSRktG4wCyAUMnswi1JBRj87uU1lnJ+brYCZlQnBPz583MLLODkPrAQ3rbk5fgeEUmXiQ4p6K+0qEWPANE1d4H2+zCvjbOs4Aw22tixIQ+MpaG7typJ7vrRCkgBBGn1FvFDE6HgIFhrWQeoCzuXNUp6874D9Sj2cbPoCLl+5ToCUQgf3Jmey5FxPveDxBgiktb0bxLQ27TIpo72dcsf6+sssxTRoFlrauqHicDU0tXZtAWRag5De7+ygKC2f4CEyRjt37fqvSciLLYoTkzNw5psfwHKiBQ4ds5AVv3H/VVmfP0QgQxcvg5w1uNKWyDXjGEiERCIbJIio4Jh7AtbmDgwiVBkboLdvAH66dJWsVcZ6st/Y3AmOR04iz7k8sJSypG8AGPWBe3lj8uzZZvHpyg/BwSNmmF/gcraV+QUODh4xga78MyLvdvvB4/UTSEt7N0gZzQUegt1Uo09n1/LyKlRWmcFY00jSOV/viibT3VRrhcqqGlKQmdlVJGa0PATbdZFEEZ91PObj0ttnB58/+FpANDlR7vv+IQiG1jfr5FaOOiEuK2H7TZZGvuJ3M93Jij9qrEvIGK19S1vB9wB71y9jN3cFCAbDBPDj8BXSu/ZJVe/kbJKFIlqFXfj+1MM3AoSTXfgGdmGKjRdJGEXB68ZHMmUtgn6+8fuOAKvhKAk2WoCAbd+T1MD3AF1nrLHGHjoW8gL8gRD8Mf4nHDXVJ9BF21rw6sD3QEypz2PWlZZ9Gvmq51wCCzbzjcc0xSySybX2vDHYycA0xG4qlKnO02zZHVptcGIlS+SldoGI/nhLmv5X41/60Tp1XrUuZAAAAABJRU5ErkJggg==">
+                <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
+                  <span class="visually-hidden">New alerts</span>
+                </span>
+              </button>
+
+              <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Dropdown
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li>
+                      <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <form class="d-flex mt-3" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <br><br><br><br>
+
+    </div><br>
+
+    <b>
+    <div class="alert alert-success" role="alert">
+        <h4 class="alert-heading">Sanskar Debnath</h4>
+
+        <hr>
+        <p class="mb-0">Welcome to the Community Dashboard Page. Here you can see your posts. From here you can Add, delete your posts.</p>
+      </div>
+    </b>
+    <br><br>
+
+    <div id="forpost" style="text-align: center; max-width: 500px; max-height: 500px; background-image: linear-gradient(to right, #d7d2cc 0%, #304352 100%); margin: auto; padding: 20px; border-radius:20px">
+        <b><p>Want to post something?</p><b>
+        <button onclick="createPost()" style="background: transparent; border: none;"><img src="data:image/png;base64,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"></button>
+    </div>
+    <br><br>
+    
+
+    <div class="card" style="background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%); color: #fff; ">
+        <div class="card-body">
+          <center><b>Recent Posts from you.</center></b>
+        </div>
+      </div>
+<hr>
+    <div class="custom-card card text-center">
+        <div class="card-header">
+            <img width="40" height="40" src="https://img.icons8.com/fluency/40/artificial-intelligence--v1.png" alt="artificial-intelligence--v1" class="avatar"/>
+            <h6 id="user">User Name goes here</h6>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            {% comment %} <button class="btn btn-primary btn-sm btn-light float-end" id="likeButton" onclick="toggleLike()">
+                <span id="likeText">Like</span>
+                <img width="20" height="20" src="https://img.icons8.com/fluency-systems-regular/50/like--v1" alt="like--v1"/>
+            </button> {% endcomment %}
+        </div>
+        <div class="card-footer text-body-secondary" style="color: white;">
+            <br>
+        </div>
+        
+      </div>
+      <br><br>
+
+<hr>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+
+    </script>
+  </body>
+</html>

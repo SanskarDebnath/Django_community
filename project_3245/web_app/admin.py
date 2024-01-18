@@ -1,8 +1,7 @@
 from django.contrib import admin
 from web_app.models import signup
 
-
-class Signup_admin (admin.ModelAdmin):
+class SignupAdmin(admin.ModelAdmin):
     list_display = (
         'fullname', 
         'phone_number', 
@@ -11,8 +10,9 @@ class Signup_admin (admin.ModelAdmin):
         'user_id', 
         'username', 
         'Reg_date'
-        )
+    )
 
-adminl.site.register(signup, Signup_admin)
+admin.site.register(signup, SignupAdmin)
+
 
 # Register your models here.

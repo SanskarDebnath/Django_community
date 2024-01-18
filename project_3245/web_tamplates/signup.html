@@ -101,6 +101,16 @@ button:hover{
 }
 </style>
 </head>
+
+{% if messages %}
+  <script>
+    {% for message in messages %}
+      alert("{{ message }}");
+    {% endfor %}
+  </script>
+{% endif %}
+
+
 <body>
     <div class="container">
         <div class="content">

@@ -1,42 +1,45 @@
-{% extends "navbar.html"%}
+    {% extends "navbar.html"%}
 
-{% block body %}
+    {% block body %}
 
-{%if my_products%}
+    {%if my_products%}
 
-<table class="table table-success table-striped">
-    <thead>
-        <tr>
-            <th>sl no</th>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Price</th>
-            <th>Action</th>
-        </tr>
-    </thead>
-    <tbody>
-        {%for data in my_products%}
-        <tr>
-            <td>
-                {{data.product_id}}<!--from model.py-->
-            </td>
-            <td>
-                {{data.product_name}}
-            </td>
-            <td>{{data.product_description}}</td>
-            <td>{{data.product_price}}</td>
-            <td><a class = "btn btn-primary" href = "{% url 'edit-order' data.product_id %}">edit</a>
-                <a class = "btn btn-primary" href = "{% url 'delete-order' data.product_id %}">Delete</a>
-            </td>
 
-        </tr>
-        {%endfor%}
-    </tbody>
-</table>
-{% else %}
 
-No products found
 
-{% endif %}
+    <table class="table table-success table-striped">
+        <thead>
+            <tr>
+                <th><i class="fa-brands fa-slack"></i> Serial</th>
+                <th><i class="fa-solid fa-signature"></i> Name</th>
+                <th><i class="fa-solid fa-audio-description"></i> Description</th>
+                <th><i class="fa-solid fa-indian-rupee-sign"></i> Price</th>
+                <th><i class="fa-solid fa-circle-exclamation"></i> Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {%for data in my_products%}
+            <tr>
+                <td>
+                    {{data.product_id}}<!--from model.py-->
+                </td>
+                <td>
+                    {{data.product_name}}
+                </td>
+                <td>{{data.product_description}}</td>
+                <td>{{data.product_price}}</td>
+                <td><a class = "btn btn-primary" href = "{% url 'edit-order' data.product_id %}"><i class="fa-solid fa-pen-to-square"></i> edit</a>
+                    <a class = "btn btn-primary" href = "{% url 'delete-order' data.product_id %}"><i class="fa-solid fa-trash"></i> Delete</a>
+                </td>
 
-{% endblock body %}
+            </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+    {% else %}
+
+    No products found
+
+    {% endif %}
+
+    {% endblock body %}
